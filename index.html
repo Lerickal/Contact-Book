@@ -11,6 +11,7 @@
         <script src="config.js"></script>
         <script>
             document.getElementById("refresh").addEventListener('click', fetchContacts);
+            document.getAnimations("addContact").addEventListener('click', addContact);
             
             function fetchContacts(){
                 fetch(rootPath + "contoller/get-contacts/").then(function(response){
@@ -35,6 +36,10 @@
                 }
                 output += "</table>";
                 document.getElementById("table").innerHTML = output;
+            }
+
+            function addContact(){
+                window.open("add-contact.html", "_self");
             }
         </script>
     </body>
